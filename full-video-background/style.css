@@ -1,0 +1,151 @@
+:root {
+    --primary-color: #eee;
+    --secondary-color: #333;
+    --accent-color: rgb(169, 148, 24);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: ; */
+    line-height: 1,5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+
+.showcase {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--primary-color) url("./mountain-large.jpg") no-repeat center center/cover;
+}
+
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner {
+    z-index: 10;
+}
+
+.cta {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    /* background: var(--accent-color); */
+    color: #fff;
+    border-top: .6px solid var(--accent-color);
+    z-index: 1;
+}
+
+.cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background: var(--accent-color); */
+    width: 100%;
+    height: 1px;
+    transition: all .5s ease;
+    border-bottom: .6px solid var(--accent-color);
+    z-index: -1;
+}
+
+.cta:hover {
+    transform: scale(.98);
+}
+
+.cta:hover::after {
+    height: 2rem;
+    background: linear-gradient(to top, rgba(169, 148, 24, 0.7), rgba(169, 148, 24, 0.3));
+    /* opacity: .8; */
+}
+
+.about {
+    text-align: center;
+    padding: 30px 40px;
+}
+
+.about p {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.subheading {
+    position: relative;
+    font-size: 2rem;
+    padding: 10px;
+    width: 100%;
+}
+
+.subheading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+}
+
+.social-menu a {
+    margin: 5px;
+    color: #000;
+}
+
+.social-menu a:hover {
+    margin: 5px;
+    color: var(--accent-color);
+}
